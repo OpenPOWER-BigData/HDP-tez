@@ -1,0 +1,159 @@
+Changes only in Hortonworks github and not in Apache Tez release 0.7.0 and hence not covered by CHANGES.txt.
+
+INCOMPATIBLE CHANGES
+
+NEW FEATURES
+
+  RMP-4813. Better handling of AM failures in Tez Job Commit stage
+
+IMPROVEMENTS
+
+  TEZ-3017. HistoryACLManager does not have a close method for cleanup
+  TEZ-1314. (BUG-48777) Port MAPREDUCE-5821 to Tez.
+  TEZ-2949. (BUG-47794) Allow duplicate dag names within session for Tez.
+  TEZ-2936. (BUG-46603) Support HDFS-based Timeline writer. 
+  TEZ-2910. (BUG-46552) Tez should invoke HDFS Client API to set up caller context.
+  TEZ-2896. (BUG-46223) Fix thread names used during Input/Output initialization.
+  TEZ-2758. (BUG-45326) Remove append API in RecoveryService after TEZ-1909
+  TEZ-2561. (BUG-45379) Port for TaskAttemptListenerImpTezDag should be configurable
+  TEZ-2781. (BUG-43591) Fallback to send only TaskAttemptFailedEvent if taskFailed heartbeat fails
+  TEZ-2874. (BUG-44456) Improved logging for caller context.
+  TEZ-2868. (BUG-44456) Fix setting Caller Context in Tez Examples.
+  TEZ-2851. (BUG-44456) Support a way for upstream applications to pass in a caller context to Tez. 
+  TEZ-2844. (BUG-44767) Backport TEZ-2775 to branch-0.7. Improve and consolidate logging in Runtime components.
+  TEZ-2719. (BUG-44767) Consider reducing logs in unordered fetcher with shared-fetch option
+  TEZ-2830. (BUG-44452) Backport TEZ-2774 to branch-0.7. Improvements to logging in the AM and part of the runtime.
+  TEZ-2812. Tez UI: Update task & attempt tables while in progress.
+  TEZ-2876. Tez UI: Update vertex, task & attempt details page while in progress.
+  TEZ-2817. Tez UI: update in progress counter data for the dag vertices and tasks table.
+  TEZ-2813. Tez UI: add counter data for rest api calls to AM Web Services v2.
+  TEZ-2789. (BUG-44090) Backport events added in TEZ-2612 to branch-0.7
+  TEZ-2767. (BUG-41183). Make TezMxBeanResourceCalculator the default resource calculator
+  TEZ-2461. tez-history-parser compile fails with hadoop-2.4.
+  TEZ-2076. Tez framework to extract/analyze data stored in ATS for specific dag.
+  BUG-43319. Port initial patch for ATS v1.5 from TEZ-2628
+  TEZ-2662. Provide a way to check whether AM or task opts are valid and error if not.
+
+BUG FIXES
+
+  TEZ-3177. (BUG-47365) Non-DAG events should use the session domain or no domain if the data does not need protection.
+  TEZ-3126. (BUG-54539) Log reason for not reducing parallelism.
+  TEZ-2886. (BUG-54426) Ability to merge AM credentials with DAG credentials.
+  TEZ-2963. (BUG-54425) RecoveryService#handleSummaryEvent exception with HDFS transparent encryption + kerberos authentication.
+  TEZ-3066. (BUG-54431) TaskAttemptFinishedEvent ConcurrentModificationException in recovery or history logging services.
+  TEZ-3128. (BUG-53461) Avoid stopping containers on the AM shutdown thread.
+  TEZ-3156. (TEZ-87) Tez client keeps trying to talk to RM even if RM does not know about the application. 
+  TEZ-3137. (BUG-52985) tez task failed with illegal state exception
+  TEZ-3123. (BUG-52871) Containers can get re-used even with conflicting local resources.
+  TEZ-3117. (BUG-52605) Deadlock in Edge and Vertex code
+  TEZ-2900. (BUG-51991) Ignore V_INPUT_DATA_INFORMATION when vertex is in Failed/Killed/Error
+  TEZ-2307. (BUG-51891) Possible wrong error message when submitting new dag
+  TEZ-2898. (BUG-50966) tez tools : swimlanes.py is broken.
+  TEZ-3037. (BUG-50911) History URL should be set regardless of which history logging service is enabled.
+  TEZ-3032. (BUG-51020) Incorrect start time in different events for DAG history events.
+  TEZ-3025. (BUG-51013) InputInitializer creation should use the dag ugi.
+  TEZ-2997. (BUG-49789) Tez UI: Support searches by CallerContext ID for DAGs.
+  TEZ-2995. (BUG-49802) Timeline primary filter should only be on callerId and not type.
+  TEZ-2975. (BUG-49421) Bump up apache commons dependency.
+  TEZ-2970. (BUG-49172) Re-localization in TezChild does not use correct UGI.
+  TEZ-2968. (BUG-49071) Counter limits exception causes AM to crash.
+  TEZ-2960. (BUG-48751) Tez UI: Move hardcoded url namespace to the configuration file
+  TEZ-2946. (BUG-45381) Tez UI: At times RM return a huge error message making the yellow error bar to fill the whole screen
+  TEZ-2947. (BUG-45381) Tez UI: Timeline, RM & AM requests gets into a consecutive loop in counters page without any delay
+  TEZ-2923. (BUG-45381) Tez Live UI counters view empty for vertices, tasks, attempts
+  TEZ-2933. (BUG-47675) Tez UI: Load application details from RM when available
+  TEZ-2908. (BUG-46445) Tez UI: Errors are logged, but not displayed in the UI when AM fetch fails
+  TEZ-2930. (BUG-47756) Tez UI: Parent controller is not polling at times
+  TEZ-2929. (BUG-47407) Tez UI: Dag details page displays vertices to be running even when dag have completed
+  TEZ-2927. (BUG-45378) Tez UI: Graciously fail when system-metrics-publisher is disabled
+  TEZ-2915. (BUG-45266) Tez UI: Getting back to the DAG details page is difficult
+  TEZ-2895. (BUG-45385) Tez UI: Add option to enable and disable in-progress
+  TEZ-2894. (BUG-45386) Tez UI: Disable sorting for few columns while in progress. Display an alert on trying to sort them
+  TEZ-2893. (BUG-45384) Tez UI: Retain vertex info displayed in DAG details page even after completion
+  TEZ-2878. (BUG-45378) Tez UI: AM error handling - Make the UI handle cases in which AM returns unexpected/no data
+  TEZ-2866. (BUG-45394) Tez UI: Newly added columns wont be displayed by default in tables
+  TEZ-2909. (BUG-46654) Tez UI: Application link in All DAGs table is disable when applicationhistory is unavailable
+  TEZ-2553. (BUG-46924) Tez UI: Tez UI Nits
+  TEZ-2899. (BUG-46926) Backport graphical view fix from TEZ-2899 to 2.3 maint
+  TEZ-2882. (BUG-45880) Consider improving fetch failure handling.
+  TEZ-2907. (BUG-46604) NPE in IFile.Reader.getLength during final merge operation.
+  TEZ-2850. (BUG-46495) Tez MergeManager OOM for small Map Outputs.
+  TEZ-2787. (BUG-46148) Tez AM should have java.io.tmpdir=./tmp to be consistent with tasks.
+  TEZ-2538. (BUG-45445) ADDITIONAL_SPILL_COUNT wrongly populated for DefaultSorter with multiple partitions
+  TEZ-2885. (BUG-46163) Remove counter logs from AMWebController.
+  TEZ-2887. (BUG-45816) Tez build failure due to missing dependency in pom files.
+  TEZ-2829. (BUG-45682) Tez UI: minor fixes to in-progress update of UI from AM
+  TEZ-2436. (BUG-45768) Tez UI: Add cancel button in column selector
+  TEZ-2398. (BUG-45054) Flaky test: TestFaultTolerance
+  TEZ-2808. (BUG-45105) Race condition between preemption and container assignment
+  TEZ-2853. (BUG-45051) Tez UI: task attempt page is coming empty
+  TEZ-2834. (BUG-44763) Make Tez preemption resilient to incorrect free resource reported by YARN
+  TEZ-2816. (BUG-44763) Preemption sometimes does not respect heartbeats between preemptions
+  TEZ-814.  (BUG-44763) Improve heuristic for determining a task has failed outputs
+  TEZ-2847. (BUG-44929) Tez UI: Task details doesn't gets updated on manual refresh after job complete
+  TEZ-2483. (BUG-44505) TEZ-2843. Tez UI: Show error if in progress fails due to AM not reachable
+  TEZ-2842. (BUG-44895) Tez UI: Update Tez App details page while in-progress
+  TEZ-2663. (BUG-44498) SessionNotRunning exceptions are wrapped in a ServiceException from a dying AM.
+  TEZ-2825. (BUG-44401) Report progress in terms of completed tasks to reduce load on AM for Tez UI
+  TEZ-2660. (BUG-44284) Tez UI: need to show application page even if system metrics publish is disabled.
+  TEZ-2780. (BUG-43253) Tez UI: Update All Tasks page while in progress
+  TEZ-2792. (BUG-43253) addendum fix build failure for java 6
+  TEZ-2792. (BUG-43253) Add AM web service API for tasks
+  TEZ-2807. (BUG-44090) Log data in the finish event instead of the start event
+  TEZ-2752. (BUG-44090) logUnsuccessful completion in Attempt should write original finish time to ATS
+  TEZ-2761. (BUG-44080) addendum fix build failure for java 6
+  TEZ-2766. (BUG-44080) Tez UI: Add vertex in-progress info in DAG details
+  TEZ-2761. (BUG-44080) Tez UI: update the progress on the dag and vertices pages with info from AM
+  TEZ-2754. (BUG-44080) Tez UI: StartTime & EndTime is not displayed with right format in Graphical View
+  TEZ-2211. (BUG-44080) Tez UI: Allow users to configure timezone
+  TEZ-2291. (BUG-44080) TEZ UI: Improper vertex name in tables.
+  TEZ-2549. (BUG-44080) Reduce Counter Load on the Timeline Server
+  TEZ-2768. (BUG-41800). Log a useful error message when the summary stream cannot be closed when shutting
+  down an AM.
+  TEZ-2745. (BUG-43220) ClassNotFound in InputInitializer causes AM to crash
+  TEZ-2602. (BUG-40970) Throwing EOFException when launching MR job
+  TEZ-2575. (BUG-40970) Handle KeyValue pairs size which do not fit in a single block in PipelinedSorter
+  TEZ-2198. (BUG-40970) Fix sorter spill counts
+  TEZ-2440. (BUG-40970) Sorter should check for indexCacheList.size() in flush()
+  TEZ-2742. VertexImpl.finished() terminationCause hides member var of the
+  same name
+  TEZ-2732. (BUG-43010) DefaultSorter throws ArrayIndex exceptions on 2047 Mb size sort buffers
+  TEZ-2734. (BUG-43108) Add a test to verify the filename generated by OnDiskMerge.
+  TEZ-2687. (BUG-42805). Tez should release/kill all held containers before stopping services during the shutdown phase
+  TEZ-2635. (BUG-42217). Limit number of attempts being downloaded in unordered fetch.
+  TEZ-2629. (BUG-43012). LimitExceededException in Tez client when DAG has exceeds the default max counters.
+  TEZ-2730. tez-api missing dependency on org.codehaus.jettison for json.
+  TEZ-2552. (BUG-42823) CRC errors can cause job to run for very long time in large jobs.
+  TEZ-2636. (BUG-41461) MRInput and MultiMRInput should work for cases when there are 0 physical inputs.
+  BUG-39836 (TEZ-2568). auto_sortmerge_join_5 fails in Tez mode
+  BUG-36811. Disable swimlanes tab in Tez UI
+  TEZ-2548. TezClient submitDAG can hang if the AM is in the process of shutting down.
+  TEZ-2475. Fix a potential hang in Tez local mode caused by incorrectly handled interrupts.
+  TEZ-2567. Tez UI: download dag data does not work within ambari
+  TEZ-2554. Tez UI: View log link does not correctly propagate login crendential to read log from yarn web.
+  TEZ-2547. Tez UI: Download Data fails on secure, cross-origin clusters
+  TEZ-2546. Tez UI: Fetch hive query text from timeline if dagInfo is not set.
+  TEZ-2513. Tez UI: Allow filtering by DAG ID on All dags table.
+  TEZ-2541. DAGClientImpl enable TimelineClient check is wrong.
+  TEZ-2539. Tez UI: Pages are not updating in IE.
+  TEZ-2535. Tez UI: Failed task attempts link in vertex details page is broken.
+  TEZ-2489. Disable warn log for Timeline ACL error when tez.allow.disabled.timeline-domains set to true.
+  TEZ-2528. Tez UI: Column selector buttons gets clipped, and table scroll bar not visible in mac.
+  TEZ-2391. TestVertexImpl timing out at times on jenkins builds.
+  TEZ-2509. YarnTaskSchedulerService should not try to allocate containers if AM is shutting down.
+  TEZ-2527. Tez UI: Application hangs on entering erroneous RegEx in counter table search box
+  TEZ-2523. Tez UI: derive applicationId from dag/vertex id instead of relying on json data
+  TEZ-2505. PipelinedSorter uses Comparator objects concurrently from multiple threads.
+  TEZ-2504. Tez UI: tables - show status column without scrolling, numeric 0 shown as Not available
+  TEZ-2478. Move OneToOne routing to store events in Tasks.
+  TEZ-2482. Tez UI: Mouse events not working on IE11
+  TEZ-1529. ATS and TezClient integration in secure kerberos enabled cluster.
+  TEZ-2481. Tez UI: graphical view does not render properly on IE11
+  TEZ-2474. The old taskNum is logged incorrectly when parallelism is changed
+  TEZ-2460. Temporary solution for issue due to YARN-2560
+  TEZ-2455. Tez UI: Dag view caching, error handling and minor layout changes
+  TEZ-2453. Tez UI: show the dagInfo is the application has set the same.
+  TEZ-2447. Tez UI: Generic changes based on feedbacks.
+  TEZ-2409. Allow different edges to have different routing plugins
+  TEZ-3101. (BUG-53754) Tez UI: Task attempt log link doesn't have the correct protocol.
+

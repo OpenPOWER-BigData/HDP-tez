@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <name>Tez</name>
+    <description>Tez is an application framework which allows for a complex directed-acyclic-graph of tasks for processing data and is built atop Apache Hadoop YARN.</description>
+    <url>http://tez.apache.org/</url>
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+      <groupId>org.apache.tez</groupId>
+      <artifactId>tez</artifactId>
+      <version>0.7.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>tez-docs</artifactId>
+    <packaging>pom</packaging>
+
+    <licenses>
+      <license>
+        <name>Apache 2</name>
+        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        <distribution>repo</distribution>
+      </license>
+    </licenses>
+
+    <issueManagement>
+        <system>Jira</system>
+        <url>http://issues.apache.org/jira/browse/TEZ</url>
+    </issueManagement>
+
+    <mailingLists>
+        <mailingList>
+            <name>User list</name>
+            <subscribe>mailto:user-subscribe@tez.apache.org
+            </subscribe>
+            <unsubscribe>mailto:user-unsubscribe@tez.apache.org
+            </unsubscribe>
+            <post>mailto:user@tez.apache.org</post>
+            <archive>http://mail-archives.apache.org/mod_mbox/tez-user/</archive>
+        </mailingList>
+        <mailingList>
+            <name>Development list</name>
+            <subscribe>mailto:dev-subscribe@tez.apache.org
+            </subscribe>
+            <unsubscribe>mailto:dev-unsubscribe@tez.apache.org
+            </unsubscribe>
+            <post>mailto:dev@tez.apache.org</post>
+            <archive>http://mail-archives.apache.org/mod_mbox/tez-dev/</archive>
+        </mailingList>
+        <mailingList>
+            <name>Commit list</name>
+            <subscribe>mailto:commits-subscribe@tez.apache.org
+            </subscribe>
+            <unsubscribe>mailto:commits-unsubscribe@tez.apache.org
+            </unsubscribe>
+            <post>mailto:commits@tez.apache.org</post>
+            <archive>http://mail-archives.apache.org/mod_mbox/tez-commits/</archive>
+        </mailingList>
+        <mailingList>
+            <name>JIRA Issues list</name>
+            <subscribe>mailto:issues-subscribe@tez.apache.org
+            </subscribe>
+            <unsubscribe>mailto:issues-unsubscribe@tez.apache.org
+            </unsubscribe>
+            <post>mailto:issues@tez.apache.org</post>
+            <archive>http://mail-archives.apache.org/mod_mbox/tez-issues/</archive>
+        </mailingList>
+    </mailingLists>
+
+    <developers>
+      <developer>
+        <id>acmurthy</id>
+        <name>Arun C. Murthy</name>
+        <email>acmurthy@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>bikas</id>
+        <name>Bikas Saha</name>
+        <email>bikas@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>billgraham</id>
+        <name>Bill Graham</name>
+        <email>billgraham@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>bobby</id>
+        <name>Robert Evans</name>
+        <email>bobby@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>cdouglas</id>
+        <name>Chris Douglas</name>
+        <email>cdouglas@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>daryn</id>
+        <name>Daryn Sharp</name>
+        <email>daryn@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>ddas</id>
+        <name>Devaraj Das</name>
+        <email>ddas@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>gopalv</id>
+        <name>Gopal Vijayaraghavan</name>
+        <email>gopalv@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>gunther</id>
+        <name>Gunther Hagleitner</name>
+        <email>gunther@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>hashutosh</id>
+        <name>Ashutosh Chauhan</name>
+        <email>hashutosh@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>hitesh</id>
+        <name>Hitesh Shah</name>
+        <email>hitesh@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>jeagles</id>
+        <name>Jonathan Eagles</name>
+        <email>jeagles@apache.org</email>
+        <timezone>-6</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>jghoman</id>
+        <name>Jakob Homan</name>
+        <email>jghoman@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>jitendra</id>
+        <name>Jitendra Pandey</name>
+        <email>jitendra@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>jlowe</id>
+        <name>Jason Lowe</name>
+        <email>jlowe@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>julien</id>
+        <name>Julien Le Dem</name>
+        <email>julien@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>kamrul</id>
+        <name>Mohammad Kamrul Islam</name>
+        <email>kamrul@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>kevinwilfong</id>
+        <name>Kevin Wilfong</name>
+        <email>kevinwilfong@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>mattmann</id>
+        <name>Chris Mattmann</name>
+        <email>mattmann@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>mliddell</id>
+        <name>Mike Liddell</name>
+        <email>mliddell@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>namit</id>
+        <name>Namit Jain</name>
+        <email>namit@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>nroberts</id>
+        <name>Nathan Roberts</name>
+        <email>nroberts@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>omalley</id>
+        <name>Owen O’Malley</name>
+        <email>omalley@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>prakash</id>
+        <name>Prakash Ramachandran</name>
+        <email>prakash@apache.org</email>
+        <timezone>+5.5</timezone>
+        <roles>
+          <role>Committer</role>
+        </roles>
+      </developer>     
+      <developer>
+        <id>rbalamohan</id>
+        <name>Rajesh Balamohan</name>
+        <email>rbalamohan@apache.org</email>
+        <timezone>+5.5</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>rohini</id>
+        <name>Rohini Palaniswamy</name>
+        <email>rohini@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>sseth</id>
+        <name>Siddharth Seth</name>
+        <email>sseth@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>tassapola</id>
+        <name>Tassapol Athiapinya</name>
+        <email>tassapola@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>tgraves</id>
+        <name>Thomas Graves</name>
+        <email>tgraves@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>tomwhite</id>
+        <name>Tom White</name>
+        <email>tomwhite@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>vikram</id>
+        <name>Vikram Dixit</name>
+        <email>vikram@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>vinodkv</id>
+        <name>Vinod Kumar Vavilapalli</name>
+        <email>vinodkv@apache.org</email>
+        <timezone>-8</timezone>
+        <roles>
+          <role>PMC</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>zjffdu</id>
+        <name>Jeff Zhang</name>
+        <email>zjffdu@apache.org</email>
+        <timezone>+8</timezone>
+        <roles>
+          <role>Committer</role>
+        </roles>
+      </developer>
+    </developers>
+
+    <organization>
+        <name>Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+    </organization>
+
+    <build>
+      <resources>
+        <resource>
+          <directory>src/main/resources</directory>
+          <filtering>true</filtering>
+        </resource>
+      </resources>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.rat</groupId>
+          <artifactId>apache-rat-plugin</artifactId>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <configuration>
+            <encoding>UTF-8</encoding>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <configuration>
+            <outputDirectory>./target</outputDirectory>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
+
+    <reporting>
+      <excludeDefaults>true</excludeDefaults>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <configuration>
+            <customBundle>${project.basedir}/src/site/custom/project-info-report.properties</customBundle>
+          </configuration>
+          <reportSets>
+            <reportSet>
+              <reports>
+                <report>project-team</report>
+                <report>mailing-list</report>
+                <report>issue-tracking</report>
+                <report>license</report>
+              </reports>
+            </reportSet>
+          </reportSets>
+        </plugin>
+      </plugins>
+    </reporting>
+
+</project>
